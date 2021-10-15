@@ -1,11 +1,16 @@
+// module
+const http = require('http');
 const express = require('express');
 const { swaggerUi, specs } = require('./util/swagger/swagger');
 
+// route
+const indexRoute = require('./routes/index');
+
 const app = express();
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/indexRoute', indexRoute);
 
-const http = require('http');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }));
 
 const server = http.createServer(app);
 
