@@ -1,11 +1,10 @@
-const swaggerUi = require('swagger-ui-express'); 
 const swaggereJsdoc = require('swagger-jsdoc'); 
 
 const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "LogRocket Express API with Swagger",
+      title: "Swagger test",
       version: "0.1.0",
       description:
         "This is a simple CRUD API application made with Express and documented with Swagger",
@@ -21,13 +20,16 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000/index",
+        url: "http://localhost:3000",
+      },
+      {
+        url: "http://localhost:100",
       },
     ],
   },
-  apis: ["./routes/index.js"],
+  apis: ["./routes/index.js", "./routes/book.js"],
 };
     
 const specs = swaggereJsdoc(options); 
 
-module.exports = { swaggerUi, specs };
+module.exports = specs;

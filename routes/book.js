@@ -6,7 +6,7 @@ module.exports=function(){
   * @swagger
   *     components:
   *         schemas:
-  *             test:
+  *             Book:
   *                 type: object
   *                 required:
   *                     - title
@@ -15,13 +15,13 @@ module.exports=function(){
   *                 properties:
   *                     id:
   *                         type: integer
-  *                         description: The auto-generated id of the Index.
+  *                         description: The auto-generated id of the book.
   *                     title:
   *                         type: string
-  *                         description: The title of your Index.
+  *                         description: The title of your book.
   *                     author:
   *                         type: string
-  *                         description: Who wrote the Index?
+  *                         description: Who wrote the book?
   *                     finished:
   *                         type: boolean
   *                         description: Have you finished reading it?
@@ -37,39 +37,39 @@ module.exports=function(){
   /**
   *  @swagger
   *  tags:
-  *    name: Indexs
-  *    description: API to manage your Indexs.
+  *    name: Books
+  *    description: API to manage your books.
   */
   /**
   *  @swagger
   *  paths:
-  *   /Indexs:
+  *   /books:
   *     get:
-  *       summary: Lists all the Indexs
-  *       tags: [Indexs]
+  *       summary: Lists all the books
+  *       tags: [Books]
   *       responses:
   *         "200":
-  *           description: The list of Indexs.
+  *           description: The list of books.
   *           content:
   *             application/json:
   *               schema:
-  *                 $ref: '#/components/schemas/Index'
+  *                 $ref: '#/components/schemas/Book'
   *     post:
-  *       summary: Creates a new Index
-  *       tags: [Indexs]
+  *       summary: Creates a new book
+  *       tags: [Books]
   *       requestBody:
   *         required: true
   *         content:
   *           application/json:
   *             schema:
-  *               $ref: '#/components/schemas/Index'
+  *               $ref: '#/components/schemas/Book'
   *       responses:
   *         "200":
-  *           description: The created Index.
+  *           description: The created book.
   *           content:
   *             application/json:
   *               schema:
-  *                 $ref: '#/components/schemas/Index'
+  *                 $ref: '#/components/schemas/Book'
   */
   route.get('/index', function(req, res){
     return res.json({result : true});
