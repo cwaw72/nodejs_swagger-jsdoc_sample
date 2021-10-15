@@ -22,9 +22,6 @@ const options = {
       {
         url: "http://localhost:3000",
       },
-      {
-        url: "http://localhost:100",
-      },
     ],
   },
   apis: ["./routes/index.js", "./routes/book.js"],
